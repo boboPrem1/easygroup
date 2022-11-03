@@ -1,0 +1,51 @@
+.career-detail-section {
+	.career-detail-inner {
+		padding-bottom: 50px;
+	}
+	.job-description {
+		background-color: rgba($primary-color, 0.8);
+		@include border-radius(15px);
+		overflow: hidden;
+		ul {
+			margin: 0;
+			padding: 0;
+			@include flexbox();
+			@include flex-wrap(wrap);
+			text-align: center;
+			padding: 24px 0;
+		}
+		li {
+			color: $light-color;
+			list-style: none;
+			display: inline-block;
+			padding: 0 8px;
+			width: 25%;
+			font-size: 13px;
+			font-weight: 400;
+			border-right: 2px solid rgba($light-color, 0.28);
+			h4 {
+				color: $light-color;
+				margin-bottom: 0;
+			}
+			&:last-child {
+				border-right: none;
+			}
+		}
+		@include bp(smx) {
+			li {
+				width: 100%;
+				border-right: none;
+				border-bottom: 1px solid rgba($light-color, 0.28);
+				padding: 10px 0;
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+	@include bp(lg) {
+		.career-detail-container {
+			padding-left: 20px;
+		}
+	}
+}

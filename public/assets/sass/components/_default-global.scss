@@ -1,0 +1,557 @@
+.semi-bold {
+	font-weight: 600;
+}
+.bold {
+	font-weight: 700;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.white-bg {
+	background-color: $light-color;
+}
+.bg-light-grey {
+	background-color: #F8F8F8;
+}
+.primary-bg {
+	background-color: $primary-color;
+}
+.primary-color {
+	color: $primary-color;
+}
+.bg-transparent-img {
+	background-color: rgba(#151515, 0.75);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	&:before {
+		background-color: rgba(#151515, 0.75);
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+}
+// site preloader css
+.site-loader {
+	background-color: $light-color;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	text-align: center;
+	.preloader-content {
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    @include translate(-50%, -50%);
+	    width: 50px;
+	}
+}
+
+// social share icon
+.social-links {
+	ul {
+		margin: 0;
+		padding: 0;
+		font-size: 0;
+	}
+	li {
+		display: inline-block;
+		list-style: none;
+		margin: 0 10px;
+	}
+	a {
+		@include font-size(16);
+		color: lighten($dark-color, 25%);
+		@include transition(color 0.4s);
+		&:hover,
+		&:focus,
+		&:active {
+			color: $hover-color;
+		}
+	}
+}
+
+.social-icon-wrap {
+	@include flexbox();
+	@include flex-wrap(wrap);
+	margin: -5px;
+	.social-icon {
+		padding: 5px;
+		@include flex-grow(1);
+		a {
+			background-color: $primary-color;
+			@include border-radius(5px);
+			color: $light-color;
+			@include flexbox();
+			@include align-items(center);
+			@include transition(all 0.3s);
+		}
+		[class*="fa-"] {
+			width: 40px;
+			text-align: center;
+		}
+		span {
+			background-color: $primary-color;
+			padding: 10px 15px;
+			@include transition(all 0.3s);
+		}
+		a {
+			&:hover {
+				background-color: $hover-color;
+				span {
+					background-color: $hover-color;
+				}
+			}
+		}
+	}
+}
+
+// back to top css
+.to-top-icon {
+	background-color: rgba($primary-color, 0.7);
+	color: $light-color;
+	font-size: 12px;
+	display: none;
+	line-height: 35px;
+	text-align: center;
+	@include border-radius(6px);
+	width: 35px;
+	height: 35px;
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+	z-index: 99;
+	@include transition(background-color 0.3s, color 0.3s);
+	&:hover {
+		background-color: $hover-color;
+		color: $light-color;
+	}
+	@include bp(smx) {
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		font-size: 13px;
+		right: 10px;
+		bottom: 10px;
+	}
+}
+
+// Tab css
+.nav-tabs {
+	margin: 0;
+	.nav-link {
+		color: $title-color;
+		border-radius: 0;
+		line-height: 1.1;
+		font-size: 16px;
+		font-weight: 600;
+		padding: 20px 25px;
+		&:hover,
+		&:focus,
+		&.active {
+			color: $primary-color;
+		}
+	}
+}
+.tab-container {
+	margin-top: 50px;
+	.responsive-tabs .nav-tabs {
+	    display: none;
+	}
+	@include bp(md) {
+		.responsive-tabs .nav-tabs {
+	        display: flex;
+	    }
+
+	    .responsive-tabs .card {
+	        border: none;
+	    }
+
+	    .responsive-tabs .card .card-header {
+	        display: none;
+	    }
+
+	    .responsive-tabs .card .collapse {
+	        display: block;
+	    }
+	}
+	@include bp(smx) {
+		.nav {
+			display: block;
+			.nav-tabs {
+				.nav-link {
+					border-width: 1px 1px 0 1px;
+					border-style: solid;
+					border-color: #dee2e6;
+					padding: 15px 20px;
+					&:hover,
+					&:focus,
+					&.active {
+						background-color: $hover-color;
+						color: $light-color;
+					}
+				}
+			}
+		}
+	}
+	@include bp(mdx) {
+		.responsive-tabs .tab-pane {
+	        display: block !important;
+	        opacity: 1;
+	    }
+	}
+}
+.tab-content {
+	padding: 30px;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	border-color: #d4d4d4;
+	ul {
+		margin-bottom: 0;
+		li {
+			margin-bottom: 5px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	@include bp(mdx) {
+		.card {
+			box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.2);
+			@include border-radius(0px);
+			margin-bottom: 20px;
+			border: none;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			.card-header {
+				background-color: transparent;
+				border: none;
+				padding: 0;
+				margin: 0;
+				a {
+					color: #383838;
+					font-family: $primary-font;
+					font-size: 15px;
+					display: block;
+					width: 100%;
+					text-decoration: none;
+					padding: 22px;
+					font-weight: 600;
+					position: relative;
+					text-align: left;
+					&:before {
+						content: "\f106";
+						display: block;
+						font-weight: 900;
+						font-family: "Font Awesome 5 Free";
+						float: right;
+						position: absolute;
+						top: 50%;
+						@include translate(0, -50%);
+						right: 15px;
+					}
+					&.collapsed {
+						&:before {
+							content: "\f107";
+						}
+					}
+				}
+			}
+			.card-body {
+				font-size: 15px;
+				padding: 0 20px 20px;
+			}
+		}
+	}
+	@include bp(smx) {
+		padding: 0;
+		border: none;
+	}
+}
+
+// Accordion css
+.accordion-content {
+	.card {
+		box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.2);
+		@include border-radius(0px);
+		margin-bottom: 20px;
+		border: none;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		.card-header {
+			background-color: transparent;
+			border: none;
+			padding: 0;
+			margin: 0;
+			a {
+				color: #383838;
+				display: block;
+				width: 100%;
+				text-decoration: none;
+				padding: 22px;
+				font-weight: 600;
+				position: relative;
+				text-align: left;
+				&:before {
+					content: "\f106";
+					display: block;
+					font-weight: 900;
+					font-family: "Font Awesome 5 Free";
+					float: right;
+					position: absolute;
+					top: 50%;
+					@include translate(0, -50%);
+					right: 15px;
+				}
+				&.collapsed {
+					&:before {
+						content: "\f107";
+					}
+				}
+			}
+		}
+		.card-body {
+			font-size: 15px;
+			padding: 0 20px 20px;
+		}
+	}
+}
+
+// Slick slider css
+.slick-dotted.slick-slider {
+    margin-bottom: 0px;
+}
+.slick-slider {
+	position: relative;
+	.slick-prev {
+		left: 15px;
+		&:before {
+			content: "\f053";
+		}
+	}
+	.slick-next {
+		right: 15px;
+		&:before {
+			content: "\f054";
+		}
+	}
+	.slick-prev, 
+	.slick-next {
+		z-index: 1;
+		width: auto;
+		height: auto;
+		&:before {
+			background-color: rgba(0, 0, 0, 0.8);
+			color: $light-color;
+			@include border-radius(100%);
+			display: block;
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+			height: 40px;
+			width: 40px;
+			text-align: center;
+			line-height: 40px;
+			@include transition(background-color 0.4s);
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			&:before {
+				background-color: $hover-color;
+				color: $light-color;
+			}
+		}
+	}
+}
+.slick-dots {
+	position: static;
+	list-style: none;
+	margin: 15px 0 0 0;
+	padding: 0;
+	li {
+		width: auto;
+		height: auto;
+		margin: 0 6px;
+		button {
+			background-color:#c6c6c6;
+			@include border-radius(100%);
+			width: 10px;
+			height: 10px;
+			&:before {
+				display: none;
+			}
+			&:hover {
+				background-color: $primary-color;
+			}
+		}
+		&.slick-active {
+			button {
+				background-color: $primary-color;
+			}
+		}
+	}
+}
+
+// processbar css
+.progress-wrapper {
+	.progress-inline {
+		.progress-title {
+			position: static;
+			@include translate(0, 0);
+			color: #292929;
+			font-size: 16px;
+			font-weight: 600;
+			margin-bottom: 15px;
+			text-transform: uppercase;
+			width: 100%;
+			z-index: initial;
+		}
+	}
+	.ab-progress {
+		@include flexbox();
+		@include flex-wrap(wrap);
+		@include flex-direction(row-reverse);
+		@include align-items(center);
+		.progress-indecator {
+			width: 50px;
+			text-align: right;
+		}
+		.progress-bar-wrap {
+			background: #D9D9D9;
+			border: none;
+			height: 3px;
+			@include calc(width, '100% - 50px');
+		}
+	}
+	.progress-inline {
+		.ab-progress-bar {
+			background: $primary-color;
+			box-shadow: none;
+			height: 3px;
+			position: relative;
+			&:before {
+				background-color: $light-color;
+				border: 1px solid $primary-color;
+				content: "";
+				width: 25px;
+				height: 25px;
+				position: absolute;
+				border-radius: 100%;
+				top: -12px;
+				right: -8px;
+			}
+			&:after {
+				background-color: $primary-color;
+				content: "";
+				width: 8px;
+				height: 8px;
+				position: absolute;
+				border-radius: 100%;
+				top: -3px;
+				right: 0;
+			}
+		}
+	}
+	@include bp(smx) {
+		.progress-inline {
+			.progress-title {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+// video play button css
+.video-button {
+	a {
+		background-color: rgba($primary-color, 0.8);
+		display: inline-block;
+		position: relative;
+		cursor: pointer;
+		@include border-radius(100%);
+		@include font-size(18);
+		line-height: 100px;
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		position: relative;
+		i {
+			color: $light-color;
+		}
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+		    left: 50%;
+		    top: 50%;
+		    width: 100%;
+		    height: 100%;
+		    top: 0;
+		    left: 0;
+		    -webkit-border-radius: 50%;
+		    -moz-border-radius: 50%;
+		    -ms-border-radius: 50%;
+		    -o-border-radius: 50%;
+		    border-radius: 50%;
+		    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.50);
+		    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.50);
+		    -ms-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.50);
+		    -o-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.50);
+		    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.50);
+		    -webkit-animation: rippleOne 3s infinite;
+		    -moz-animation: rippleOne 3s infinite;
+		    -ms-animation: rippleOne 3s infinite;
+		    -o-animation: rippleOne 3s infinite;
+		    animation: rippleOne 3s infinite;
+		}
+		&:before {
+			animation-delay: 0.9s;
+		}
+		&:after {
+			animation-delay: 0.3s;
+		}
+	}
+	@include bp(smx) {
+		a {
+			line-height: 60px;
+			width: 60px;
+			height: 60px;
+		}
+	}
+}
+
+@-webkit-keyframes rippleOne {
+    70% {
+        box-shadow: 0 0 0 15px rgba(244, 68, 56, .0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(244, 68, 56, .0);
+    }
+}
+
+@keyframes rippleOne {
+    70% {
+        box-shadow: 0 0 0 15px rgba(244, 68, 56, .0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(244, 68, 56, .0);
+    }
+}
+

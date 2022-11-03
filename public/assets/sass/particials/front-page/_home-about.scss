@@ -1,0 +1,131 @@
+.home-about {
+	padding: 110px 0;
+	.about-head-wrap {
+		display: grid;
+		grid-template-columns: 2fr 2fr 1fr;
+		align-items: center;
+		margin-bottom: 10px;
+		.about-dec {
+			padding: 0 20px 0 30px;
+			margin-left: 15px;
+			border-left: 3px solid #D9D9D9;
+			p {
+				font-size: 16px;
+				&:first-letter {
+			        color: #787878;
+			        float: left;
+			        font-size: 50px;
+			        margin: 0 .1em 0 0;
+			        line-height: 1.1;
+			    }
+			}
+		}
+	}
+	.progress-content {
+		background-color: $light-color;
+		border-radius: 15px;
+		box-shadow: 0px 15px 20px -10px rgba($dark-color, 0.25);
+		padding: 56px 60px 60px 60px;
+		em {
+			font-size: 16px;
+			font-weight: 600;
+		}
+	}
+	.progress-wrapper {
+		margin-top: 30px;
+		margin-bottom: 35px;
+	}
+	.exp-date {
+		border: 3px solid rgba($primary-color, 0.38);
+		border-radius: 15px;
+		padding: 30px 20px;
+		text-align: center;
+		h2 {
+			color: $primary-color;
+			font-size: 72px;
+			font-weight: 700;
+			line-height: 1;
+			margin-bottom: 10px;
+		}
+		h4 {
+			color: #787878;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+	}
+	.progress-content {
+		margin-top: 50px;
+	}
+	@include bp(md) {
+		.about-video-banner {
+			margin-right: -30px;
+		}
+		.progress-content {
+			margin-left: -30px;
+		}
+	}
+	@include bp(mdx) {
+		.about-head-wrap {
+			align-items: self-start;
+			margin-bottom: 40px;
+			.section-head {
+				margin-bottom: 0;
+			}
+			.about-dec {
+				padding: 0;
+				margin-left: 0;
+				border-left: none;
+			}
+		}
+		.section-head-outer {
+			grid-column: 1/3;
+		}
+		.about-dec {
+			grid-column: 1/3;
+			margin-top: auto;
+		}
+		.exp-date-wrap {
+			grid-column: 3/3;
+			.exp-date {
+				padding-top: 10px;
+				padding-bottom: 10px;
+				h2 {
+					font-size: 22px;
+				}
+				h4 {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+	@include bp(smx) {
+		padding: 70px 0;
+		.section-head-outer {
+			grid-column: 1/4;
+		}
+		.about-dec {
+			grid-column: 1/4;
+			margin-top: auto;
+		}
+		.exp-date-wrap {
+			grid-column: 1/4;
+		}
+		.progress-wrapper {
+			margin-bottom: 30px;
+		}
+		.progress-content {
+			padding: 30px 30px 40px;
+		}
+	}
+}
+
+.about-video-banner {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 15px;
+	min-height: 520px;
+	@include bp(smx) {
+		min-height: 290px;
+	}
+}

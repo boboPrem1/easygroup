@@ -1,0 +1,50 @@
+.portfolio-detail-section {
+	padding-bottom: 100px;
+	.portfolio-inner-detail {
+		h2 {
+			margin-bottom: 20px;
+		}
+		.project-summary ul {
+			@include flexbox();
+			@include flex-wrap(wrap);
+			margin: 0;
+			padding: 0;
+			li {
+				list-style: none;
+				width: 50%;
+				margin-bottom: 8px;
+				i {
+					color: $primary-color;
+					margin-right: 5px;
+				}
+			}
+			@include bp(smx) {
+				li {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.portfolio-img {
+		margin-bottom: 30px;
+		img {
+			@include border-radius(15px);
+		}
+	}
+	@include bp(smx) {
+		padding-bottom: 70px;
+	}
+}
+.gallery-slider {
+	margin-top: 50px;
+	.slick-slide {
+      margin: 0 10px;
+  	}
+
+	.slick-list {
+      	margin: 0 -10px;
+      	img {
+      		@include border-radius(15px);
+      	}
+  	}
+}

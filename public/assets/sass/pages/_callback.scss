@@ -1,0 +1,73 @@
+.callback-inner {
+	padding-top: 110px;
+	padding-bottom: 110px;
+	.callback-img {
+		padding: 55px;
+		position: relative;
+		z-index: 1;
+		&:before {
+			background-image: url(assets/images/banner-background.png);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			opacity: 0.5;
+			z-index: -1;
+		}
+	}
+	img {
+		@include border-radius(100%);
+	}
+	.circle-progressbar {
+		padding: 0 10px;
+		.circle-bar {
+			background-color: $light-color;
+			@include border-radius(15px);
+			display: block;
+			padding: 30px 25px;
+			.circle-number {
+				line-height: 13rem;
+			}
+		}
+	}
+	@include bp(xl) {
+		.row {
+			margin: 0 -25px;
+			[class*="col-"] {
+				padding: 0 25px;
+			}
+		}
+	}
+	@include bp(mdx) {
+		.callback-img {
+			margin-top: 40px;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	@include bp(smx) {
+		padding-top: 70px;
+		padding-bottom: 70px;
+		.circle-progressbar-wrap {
+			margin-top: 40px;
+		}
+		.circle-progressbar {
+			width: 100%;
+			padding: 0;
+			margin-bottom: 15px;
+			.circle-bar {
+				.circle-number {
+					font-size: 14px;
+					line-height: 10rem;
+				}
+			}
+		}
+	}
+}
+	

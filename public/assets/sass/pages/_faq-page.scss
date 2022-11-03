@@ -1,0 +1,96 @@
+.faq-page-container {
+	padding-bottom: 80px;
+	.faq-content-wrap {
+		@include bp(lg) {
+			padding-left: 20px;
+		}
+	}
+	.section-head {
+		p {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.qsn-form-container {
+	box-shadow: 0px 0px 30px 0px rgba($dark-color, 0.05);
+	@include border-radius(25px);
+	padding: 40px 40px 20px;
+	text-align: center;
+	p {
+		margin-bottom: 20px;
+	}
+	form {
+		padding-top: 10px;
+		text-align: left;
+	}
+	textarea {
+		border: none;
+	}
+	input {
+		border: none;
+		&:not([type="submit"]) {
+			min-height: 59px;
+			width: 100%;
+		}
+		&:not[type="submit"] {
+			height: 59px;
+		}
+		&[type="submit"] {
+			border: 2px solid $light-color;
+			color: $light-color;
+			@include transition(all 0.4s);
+			&:hover {
+				border-color: $hover-color;
+			}
+		}
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+	  -moz-appearance: textfield;
+	  appearance: textfield;
+	}
+	@include bp(lg) {
+		margin-left: 40px;
+	}
+	@include bp(lgx) {
+		margin-top: 40px;
+		padding: 30px;
+	}
+}
+.faq-testimonial {
+	.faq-image {
+		img {
+			@include border-radius(25px);
+			width: 100%;
+		}
+	}
+	.testimonial-content {
+		background-color: $primary-color;
+		border-radius: 0 15px 15px 15px;
+		color: $light-color;
+		margin-right: 25px;
+		margin-top: -100px;
+		padding: 30px;
+		position: relative;
+		i {
+			font-size: 40px;
+		    margin-bottom: 12px;
+		    line-height: 1;
+		}
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	@include bp(lgx) {
+		margin-bottom: 40px;
+	}
+}

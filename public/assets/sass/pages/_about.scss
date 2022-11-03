@@ -1,0 +1,115 @@
+.about-page-section {
+	.about-head-wrap {
+		margin-bottom: 70px;
+		.section-head {
+			margin-bottom: 0;
+			padding-right: 50px;
+		}
+	}
+	.testimonial-single {
+		box-shadow: 0px 0px 25px 0px rgba($dark-color, 0.05);
+		@include border-radius(15px);
+		padding: 30px 30px 30px 30px;
+		.testimonial-content-wrap {
+			@include flexbox();
+			@include flex-wrap(wrap);
+			@include align-items(center);
+		}
+		p {
+			color: $primary-color;
+			font-size: 15px;
+			font-weight: 600;
+			line-height: 1.4;
+			margin-bottom: 25px;
+		}
+		.testi-img {
+			@include border-radius(100%);
+			overflow: hidden;
+			height: 70px;
+			width: 70px;
+		}
+		.testi-content {
+			@include calc(width, '100% - 70px');
+			padding-left: 20px;
+			h4 {
+				margin-bottom: 5px;
+			}
+		}
+	}
+	.iconbox-container {
+		margin-bottom: 50px;
+	}
+	.about-video-banner {
+		margin-bottom: 70px;
+	}
+	.process-count-wrap {
+		margin-bottom: -80px;
+		position: relative;
+	}
+	.process-count-item {
+		background-color: $light-color;
+		@include border-radius(15px);
+		@include flexbox();
+		@include align-items(center);
+		box-shadow: 0px -10px 35px 0px rgba($dark-color, 0.03);
+		padding: 35px;
+		.process-number {
+			background: #F8F8F8;
+			@include border-radius(5px);
+			color: $primary-color;
+			font-size: 32px;
+			font-weight: 700;
+			padding: 20px;
+			line-height: 1;
+		}
+		.process-content {
+			padding-left: 20px;
+			h4 {
+				margin-bottom: 6px;
+			}
+			p {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	.about-inner-process {
+		padding-top: 180px;
+		padding-bottom: 100px;
+		.support-icon-item {
+			background-image: url(assets/images/pattern-banner2.png);
+			i {
+				color: $primary-color;
+			}
+		}
+	}
+	@include bp(smx) {
+		.about-head-wrap {
+			margin-bottom: 70px;
+			.section-head {
+				margin-bottom: 30px;
+				padding-right: 0;
+			}
+		}
+		.process-count-item {
+			margin-bottom: 30px;
+		}
+		.about-inner-process {
+			padding-top: 100px;
+			padding-bottom: 70px;
+		}
+	}
+	@include bp(xlx) {
+		.process-count-item {
+			@include flex-wrap(wrap);
+			padding: 20px;
+			.process-number {
+				margin-bottom: 15px;
+			}
+			.process-content {
+				padding-left: 0;
+			}
+		}
+	}
+}

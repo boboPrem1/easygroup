@@ -1,0 +1,10 @@
+.pricing-page-section {
+	.pricing-table-inner {
+		padding-bottom: 110px;
+	}
+	@include bp(mdx) {
+		.pricing-table-inner {
+			padding-bottom: 70px;
+		}
+	}
+}

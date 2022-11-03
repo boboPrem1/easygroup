@@ -1,0 +1,135 @@
+.home-support {
+	.home-support-outer {
+		@include background(size, cover);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-attachment: fixed;
+		padding-bottom: 215px;
+		padding-top: 110px;
+		position: relative;
+		z-index: 1;
+		* {
+			color: $light-color;
+		}
+		.title-divider:before {
+		    background-color: #ffffff;
+		}
+	}
+	.home-support-details {
+		display: grid;
+    	grid-template-columns: 40% 60%;
+	}
+	.home-support-details {
+		background-color: $light-color;
+		border-radius: 15px;
+		box-shadow: 0px 25px 35px 0px rgba($dark-color, 0.05);
+		margin-top: -100px;
+		position: relative;
+		z-index: 2;
+		overflow: hidden;
+		.home-support-image {
+			@include background(size, cover);
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.home-support-content {
+			padding: 55px 40px 60px 40px;
+			h3 {
+				border-bottom: 1px solid #D9D9D9;
+				padding-bottom: 25px;
+			}
+		}
+	}
+	@include bp(mdx) {
+		.home-support-outer {
+			padding-top: 70px;
+			padding-bottom: 130px;
+		}
+		.home-support-details {
+			grid-template-columns: auto;
+			.home-support-image {
+				min-height: 300px;
+			}
+		}
+	}
+	@include bp(smx) {
+		.home-support-outer {
+			padding-bottom: 175px;
+		}
+		.home-support-details {
+			.home-support-content {
+				padding: 40px 25px;
+			}
+		}
+	}
+}
+
+.support-btn-wrap {
+	padding-top: 15px;
+	.support-number-icon {
+		background-color: #D9D9D9;
+		border-radius: 100%;
+		color: $primary-color;
+		font-size: 35px;
+		line-height: 70px;
+		height: 70px;
+		text-align: center;
+		width: 70px;
+		margin-right: 10px;
+	}
+	.support-number-content {
+		h5 {
+			margin-bottom: 10px;
+		}
+		a {
+			color: $primary-color;
+			font-size: 28px;
+			font-family: $title-font;
+			font-weight: 700;
+			line-height: 1.1;
+		}
+	}
+	@include bp(smx) {
+		.button-round {
+			margin-bottom: 20px;
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+		.support-number-icon {
+			font-size: 25px;
+			line-height: 40px;
+			height: 40px;
+			width: 40px;
+		}
+		.support-number-content {
+			h5 {
+				font-size: 14px;
+			}
+			a {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+.support-icon-item {
+	background-image: url(assets/images/pattern-banner1.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	padding: 55px 0;
+	a {
+		display: block;
+	}
+	i {
+		font-size: 60px;
+	}
+	h4 {
+		margin-bottom: 0;
+		margin-top: 20px;
+	}
+	@include bp(mdx) {
+		margin-bottom: 40px;
+	}
+}
