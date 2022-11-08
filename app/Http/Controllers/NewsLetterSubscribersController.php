@@ -54,7 +54,6 @@ class NewsLetterSubscribersController extends Controller
         try {
             if (NewsletterFacade::isSubscribed($email)) {
                 return redirect()->back()->with('error', 'L\'email entrée existe déja');
-                // $message = 'Email existant';
             } else {
                 NewsletterFacade::subscribe($email);
                 Mail::to($email)->send(new WelcomeWishing($email));
@@ -62,7 +61,6 @@ class NewsLetterSubscribersController extends Controller
             }
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
-            // $message = $e;
         }
     }
 
