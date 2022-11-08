@@ -93,12 +93,11 @@ class ArticleController extends Controller
     {
         //
         $article = Article::where('id', $id)->first();
-        if($article) {
+        if ($article) {
             return view('admin.blog.edit', compact('article'));
         } else {
             return back();
         }
-
     }
 
     /**

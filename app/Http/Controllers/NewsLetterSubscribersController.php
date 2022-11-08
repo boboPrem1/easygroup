@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeWishing;
 use App\Models\NewsLetterSubscribers;
-use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Mail;
+use Spatie\Newsletter\NewsletterFacade;
 
 class NewsLetterSubscribersController extends Controller
 {
@@ -41,20 +43,27 @@ class NewsLetterSubscribersController extends Controller
     {
         //
         // dd('ok');
+        // dd($request->input());
+
         request()->validate([
-            'email' => 'required'
+            'email' => 'required|email'
         ]);
 
-        $subscriber = new NewsLetterSubscribers;
-        $subscriber->nom = request('nom');
-        $subscriber->email = request('email');
-        // dd($subscriber);
-        $subscriber->save();
+        $email = $request->email;
 
-        Alert::success('Email ajouté', 'Vous recevrez désormais toutes les notifications');
-
-
-        return redirect(route('mail.send'));
+        try {
+            if (NewsletterFacade::isSubscribed($email)) {
+                return redirect()->back()->with('error', 'L\'email entrée existe déja');
+                // $message = 'Email existant';
+            } else {
+                NewsletterFacade::subscribe($email);
+                Mail::to($email)->send(new WelcomeWishing($email));
+                return redirect()->back()->with('message', 'Souscription effectuée avec succès');
+            }
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+            // $message = $e;
+        }
     }
 
     /**

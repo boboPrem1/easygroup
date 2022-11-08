@@ -44,7 +44,8 @@
                                                 </span>
                                             </div>
                                             <div>{!! substr($article->description, 0, 200) !!}</div>
-                                            <a href="{{ route('article', $article->id) }}" class="button-text">LIRE PLUS...</a>
+                                            <a href="{{ route('article', $article->id) }}" class="button-text">LIRE
+                                                PLUS...</a>
                                         </div>
                                     </article>
                                 </div>
@@ -66,12 +67,12 @@
                                         <li>
                                             <figure class="post-thumb">
                                                 <a href="{{ route('article', $article->id) }}"><img
-                                                        src="{{ asset('storage/' . $article->poster) }}"
-                                                        alt=""></a>
+                                                        src="{{ asset('storage/' . $article->poster) }}" alt=""></a>
                                             </figure>
                                             <div class="post-content">
                                                 <h5>
-                                                    <a href="{{ route('article', $article->id) }}">{{ $article->titre }}</a>
+                                                    <a
+                                                        href="{{ route('article', $article->id) }}">{{ $article->titre }}</a>
                                                 </h5>
                                                 <div class="entry-meta">
                                                     <span class="posted-on">
@@ -102,5 +103,5 @@
 @endsection
 
 @section('blog')
-current-menu-item
+    current-menu-item
 @endsection

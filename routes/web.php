@@ -30,6 +30,7 @@ Route::get('/about', function () {
 Route::get('/blog', [ArticleController::class, 'blog'])->name('blog');
 
 Route::get('/contact', function () {
+    // dd(session());
     return view('pages.contact');
 })->name('contact');
 

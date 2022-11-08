@@ -13,9 +13,11 @@
     <!-- Fonts Awesome CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/fontawesome/css/all.min.css') }}">
     <!-- Elmentkit Icon CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/elementskit-icon-pack/assets/css/ekiticons.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('assets/vendors/elementskit-icon-pack/assets/css/ekiticons.css') }}">
     <!-- Fonts Awesome CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/progressbar-fill-visible/css/progressBar.css') }}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('assets/vendors/progressbar-fill-visible/css/progressBar.css') }}">
     <!-- jquery-ui css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/jquery-ui/jquery-ui.min.css') }}">
     <!-- modal video css -->
@@ -26,7 +28,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/slick/slick.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/slick/slick-theme.css') }}">
     <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+        rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles.css') }}"> --}}
@@ -44,11 +48,23 @@
             background-color: #085359;
         }
 
+        /*
+        #alert {
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            width: 100%;
+        } */
+
+        #flash-msg {
+            z-index: 2000;
+        }
     </style>
 
 </head>
 
 <body class="home">
+
     @include('sweetalert::alert')
     {{-- <div id="siteLoader" class="site-loader">
         <div class="preloader-content">
@@ -63,7 +79,8 @@
 
             <div class="top-header" style="background-color:#085359; overflow:hidden;">
                 <div class="bitcoin">
-                    <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
+                    <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd"
+                        background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
                 </div>
                 <div class="container">
                     <div class="row">
@@ -147,7 +164,8 @@
 
         </main>
         <!-- site footer html start  -->
-        <footer id="colophon" class="site-footer footer-primary" style="background-image: url(assets/images/img13.jpg);">
+        <footer id="colophon" class="site-footer footer-primary"
+            style="background-image: url(assets/images/img13.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="top-footer">
@@ -155,7 +173,8 @@
                         <div class="col-lg-4 col-md-6">
                             <aside class="widget widget_text">
                                 <div class="footer-logo">
-                                    <a href="{{ route('home') }}"><img src="{{ asset('assets/images/site-logo.png') }}" alt="logo"></a>
+                                    <a href="{{ route('home') }}"><img
+                                            src="{{ asset('assets/images/site-logo.png') }}" alt="logo"></a>
                                 </div>
                                 <div class="textwidget widget-text">
                                     100% axé resultas, à EASY GROUPE nous mettons en oeuvre toute notre expertise et
@@ -327,7 +346,7 @@
             // ewsletter.style.removeProperty("display");
             // newsletter.style.place-content = "center";
         }
-        if(getCookie("newsletter") === "") {
+        if (getCookie("newsletter") === "") {
             setTimeout(showPopUp, 40000);
         }
 
@@ -364,6 +383,23 @@
             return "";
         }
 
+        //config flash message ...
+        let flash_msg = document.getElementById('flash-msg');
+        if (flash_msg) {
+            // let messageContent = "{{ session('message') }}";
+            // if (messageContent) {
+            //     let newsletterElement = document.querySelector('#newsletter');
+            //     newsletterElement.style.display = "none";
+            // }
+            setTimeout(() => {
+                const alert = bootstrap.Alert.getOrCreateInstance('#alertM')
+                alert.close()
+                // document.querySelector('#alertM').classList.toggle('show');
+                setTimeout(() => {
+                    flash_msg.style.display = 'none';
+                }, 1500);
+            }, 5000);
+        }
     </script>
     <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
 </body>

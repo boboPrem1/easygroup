@@ -10,12 +10,14 @@ class MailController extends Controller
 {
     //
 
-    public function index() {
+    public function index()
+    {
+        $email = request()->email;
         $mailData = [
             'title' => 'Bienvenue à EasyGroup'
         ];
 
-        Mail::to('directionebouf@gmail.com')->send(new SendMail($mailData));
+        Mail::to($email)->send(new SendMail($mailData));
 
         return redirect(route('home'));
     }
